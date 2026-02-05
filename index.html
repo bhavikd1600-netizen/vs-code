@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>main web page</title>
+     <link rel="stylesheet" href="style_main_page.css">
+</head>
+<body>
+    <h2 id="welcome"></h2>
+    <p id="details"></p>
+
+
+<script>
+   
+    let username = localStorage.getItem("username");
+    let mobilenumber = localStorage.getItem("mobilenumber");
+    let email = localStorage.getItem("email");
+
+  
+    if(username && mobilenumber && email){
+        document.getElementById("welcome").innerText = "Welcome to my web page, " + username + "!";
+        document.getElementById("details").innerText = 
+            "Mobile Number: " + mobilenumber + "\nEmail: " + email;
+    } else {
+        document.getElementById("welcome").innerText = "No registration data found.";
+    }
+</script>
